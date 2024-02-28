@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-family:Roboto;
+}
+
+html,body {
+    font-size: 14px;
+    font-weight: 400;
+    background: #000; ;
+    color: #fff;
+}
+.container {
+    width: 1100px;
+    margin: 0px auto;
+}
+.width-33 {
+    width: 33%;
+    float: left;
+}
+.width-66 {
+    width: 66%;
+    float: left;
+}
+.main-panel {
+    width: 100%;
+    float: left;
+    padding-top: 20px;
+    height: 100vh;
+}
+.logo {
+    font-size: 40px;
+    font-weight: 600;
+}
+.span-col {
+    color: #ffbf35;
+}
+nav {
+    float: right;
+}
+nav a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 20px;
+    color:white;
+}
+.width-50 {
+    width: 50%;
+    float:left;
+}
+.banner-section {
+    width: 100%;
+    float:left;
+}
+.banner-section h1 {
+    font-size: 48px;
+    margin-top: 10px;
+    font-weight: bolder;
+}
+.banner-section h2 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+.banner-section a {
+    float:left;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center;
+    border: 2px solid #ffbf35;
+    color: #ffbf35;
+    margin-left: 10px;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+}
+.main-section {
+    width: 100%;
+    float: left;
+    padding-top: 110px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+.heading-text {
+    width: 100%;
+    float:left;
+    font-size: 37px;
+    text-align: center;
+    margin-bottom: 50px;
+    color:#ffbf35;
+}
+.about-image {
+    width: 100%;
+    padding: 0px 50px;
+    margin-top: 20px;
+}
+.about-us {
+    width: 100%;
+    padding: 20px;
+}
+.about-us p {
+	font-size: 16px;
+	margin-top: 15px;
+	line-height: 20px;
+}
+table {
+	width: 100%;
+}
+table th,
+table td {
+	font-size: 16px;
+	text-align: left;
+	padding: 5px 0px;
+}
+.skill {
+    margin-top: 30px;
+    font-size: 17px;
+}
+.skill span {
+    float: right;
+}
+.skill div {
+    width: 100%;
+    float: left;
+    margin-top: 7px;
+    background: #e7e7e7;
+    border-radius: 10px;
+}
+.skill div span {
+    background: #ffbf35;
+    height: 5px;
+	float: left;
+}
+.bg-lightgrey {
+	background-color: #1a1a1a;
+}
+.edu-exp {
+	width: 48%;
+	margin: 1%;
+	float: left;
+    padding-left: 10px;
+
+}
+.experience-list {
+	width: 100%;
+	float: left;
+	padding: 30px 10px;
+	background: #262626;
+	margin-bottom: 20px;
+}
+.experience-content {
+	width: 100%;
+	float: left;
+	margin-left: 10px;
+}
+.experience-content h2 {
+
+	font-weight: 600;
+	margin-bottom: 5px;
+	font-size: 20px;
+}
+.experience-content h3 {
+	color: #ffbf35;
+	font-weight: 500;
+	margin-bottom: 2px;
+	font-size: 17px;
+}
+.experience-content p {
+	font-size: 15px;
+}
+.footer {
+    background: #202020;
+    padding: 30px 0px 40px 0px;
+    width: 100%;
+    float: left;
+}
+.footer-sect {
+    color: #b3b3b3;
+}
+.footer-sect a {
+	color: #b3b3b3;
+	margin-left: 10px;
+	text-decoration: none;
+	font-size: 18px;
+	text-align: center;
+}
+.social-icon a i {
+	width: 50px;
+	height: 50px;
+	border: 1px solid #cdcdcd;
+	line-height: 50px;
+	font-size: 20px;
+	border-radius: 50%;
+}
