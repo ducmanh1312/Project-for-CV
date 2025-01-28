@@ -1,0 +1,65 @@
+Tổng hợp lại các define và include:
+
+1. MyConfig.h
+	Thêm 
+		#include "Core.h"
+
+2. MyGatewayTransportEthernet.cpp
+	- Bỏ 2 dòng 
+			#include "MyMessage.h"    // chỉnh sửa
+			#include "Core.h"         // chỉnh sửa (for delay)
+			
+	- Chỉ còn lại 1 dòng chỉnh sửa:
+			#include "MyIndication.h" // chỉnh sửa
+	
+3. MyHw.h
+	Comment 3 dòng
+		//#ifdef __cplusplus
+		//#include <Arduino.h>
+		//#endif
+		
+		
+4. MySensorsCore.cpp
+	- Bỏ 3 dòng
+		#include "MySigning.h"     // chỉnh sửa
+		#include "MyIndication.h"  // chỉnh sửa
+		#include "MyTransport.h"   // chỉnh sửa
+		
+	- Thay bằng 1 dòng:
+		#include "MySensors.h"     // chỉnh sửa
+		
+5. MySinging.cpp
+  - Bỏ dòng 
+			//#include "string.h" // chỉnh sửa
+			
+	- Chỉ còn lại 1 dòng chỉnh sửa:
+			//#include "drivers/ATSHA204/sha256.h" // chỉnh sửa
+			
+6. MyTransport.cpp
+	- Bỏ 3 dòng
+			#include "MySigning.h"      // chỉnh sửa
+			#include "MyIndication.h"   // chỉnh sửa
+			#include "MySensorsCore.h"  // chỉnh sửa
+			
+7. MyTransport.h
+	- Bỏ 3 dòng
+			#include "MyEepromAddresses.h"
+			#include "MyMessage.h"
+			#include "Myconfig.h"
+
+	- Chỉ còn lại 1 dòng chỉnh sửa:
+			#include "MySensors.h"         // chỉnh sửa
+
+			
+
+
+
+
+
+
+
+
+
+
+
+

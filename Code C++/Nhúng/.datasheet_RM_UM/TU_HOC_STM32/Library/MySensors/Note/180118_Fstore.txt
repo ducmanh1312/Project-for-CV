@@ -1,0 +1,80 @@
+Sử dụng thư viện FStore_STM32 để lưu trữ thay cho thư viện ROM của MySensors.
+(add thư viện FStore vào MyHwSAMD)
+
+1. MyConfig.h
+	Disable MY_RAM_ROUTING_TABLE_FEATURE, lưu mảng routing_table vào Flash.
+	Comment dòng:
+	//#define MY_RAM_ROUTING_TABLE_FEATURE
+	
+2. MySensorsCore.cpp
+	Hàm _begin() gọi tới hàm hwInit() để khởi tạo: chúng ta sẽ đặt hàm FStore_begin() trong hwInit().
+	
+3. MyHwAVR.h
+	Comment đoạn code sau (để _begin() gọi tới hàm hwInit() trong MyHwSAMD)
+	//#if defined(MY_DISABLED_SERIAL)
+	//  #define hwInit()
+	//#else
+	//  #define hwInit() MY_SERIALDEVICE.begin(MY_BAUD_RATE)
+	//#endif
+	
+4. MyTransport.cpp
+	Thêm đoạn code sau:
+	#include "MySensors.h"  // chỉnh sửa (#define MY_RAM_ROUTING_TABLE_ENABLED)
+		
+5. MyHwSAMD.cpp
+	- Khai báo thư viện FStore:
+		Trong MyEepromAddresses.h, tổng kích thước các biến là 413 byte ứng với 413 key lưu vào FStore.
+		=> Dùng 2 FStore để lưu.
+	
+	Thêm đoạn code sau:
+		#include "FStore.h"
+		#define MYSENSOR_FSTORE_ID_0       (0)
+		#define MYSENSOR_FSTORE_ID_1       (1)
+
+		 // dùng 4 trang Flash cuối cùng
+		#define MYSENSOR_START_ADDR_0      ((uint32_t)0x08007000)  // page 28, 29
+		#define MYSENSOR_START_ADDR_1      ((uint32_t)0x08007800)  // page 30, 31
+
+		#define MYSENSOR_FSTORE_NUM_PAGE          (2)
+
+		#define MYSENSOR_FSTORE_NUMBER   2
+		FStore  mysensor_fstore[MYSENSOR_FSTORE_NUMBER];
+	
+
+	- Hàm void hwInit(): thêm lệnh khởi tạo FStore
+		void hwInit()
+		{
+			//MY_SERIALDEVICE.begin(MY_BAUD_RATE); // chỉnh sửa do lỗi chưa khai báo
+			#if defined(MY_GATEWAY_SERIAL)
+				while (!MY_SERIALDEVICE) {}
+			#endif
+			//Wire.begin(); // chỉnh sửa
+
+			FStore_Begin(&mysensor_fstore[0], MYSENSOR_START_ADDR_0, MYSENSOR_FSTORE_NUM_PAGE, MYSENSOR_FSTORE_ID_0);
+			FStore_Begin(&mysensor_fstore[1], MYSENSOR_START_ADDR_1, MYSENSOR_FSTORE_NUM_PAGE, MYSENSOR_FSTORE_ID_1);
+		}
+		
+	- Sửa 2 hàm đọc/ghi byte vào flash
+			void i2c_eeprom_write_byte(unsigned int eeaddress, uint8_t data )
+			{
+				if (eeaddress < KEY_COUNT)  FStore_SetKey(&mysensor_fstore[0], eeaddress - 0,         data);
+				else                        FStore_SetKey(&mysensor_fstore[1], eeaddress - KEY_COUNT, data);
+			}
+
+			uint8_t i2c_eeprom_read_byte(unsigned int eeaddress)
+			{
+				if (eeaddress < KEY_COUNT) return FStore_GetKey(&mysensor_fstore[0], eeaddress - 0);
+				else                       return FStore_GetKey(&mysensor_fstore[1], eeaddress - KEY_COUNT);
+			}
+	
+Chú ý:
+	- Mỗi byte của MySensors lưu vào 1 key trong FStore (lưu đc tối đa 2 byte), do đó mỗi key đang thừa 1 byte.
+	- Gửi 2 giá trị Erase_counter của 2 FStore lên Domoticz để giám sát.
+		Thêm hàm đọc giá trị trong thư viện MyHwSAMD:
+			int hWFStoreCountPageErase(int number)
+			{
+				if ((number >= 0) && (number < MYSENSOR_FSTORE_NUMBER))
+					return FStore_CountPageErase(&mysensor_fstore[number]);
+
+				return 0;
+			}

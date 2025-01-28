@@ -1,0 +1,3 @@
+﻿1. Chỉnh sửa NewPing.h
+	- Line 143: #define TIMER_ENABLED false
+	- Line 146: #define NO_ECHO (MAX_SENSOR_DISTANCE * US_ROUNDTRIP_CM)

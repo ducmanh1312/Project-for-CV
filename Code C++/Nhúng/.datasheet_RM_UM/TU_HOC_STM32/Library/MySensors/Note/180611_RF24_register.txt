@@ -1,0 +1,2 @@
+Cần lưu ý khi đọc/ghi thanh ghi của RF24 khi đang bật chế độ ngắt nhận bản tin.
+Nếu đang đọc mà nhảy vào ngắt sẽ có thể dẫn đến treo hệ thống.

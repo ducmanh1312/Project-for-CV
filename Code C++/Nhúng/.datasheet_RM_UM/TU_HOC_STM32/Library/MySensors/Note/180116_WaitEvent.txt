@@ -1,0 +1,136 @@
+//===========================================================================//
+Dùng ngắt của chân RF24_IRQ để đọc bản tin:
+(không cần dùng SPI kiểm tra cờ nữa)
+	1. MyConfig.h
+		#define MY_RX_MESSAGE_BUFFER_FEATURE
+		
+	2. MyTransportNRF24.cpp
+		Thêm:
+		#include <string.h>  // memcpy
+		#include "drivers/CircularBuffer/CircularBuffer.h"
+
+		(Copy và Add CircularBuffer.h vào project)
+		
+	3. CircularBuffer.h
+		Thêm:
+		#define MY_CRITICAL_SECTION
+		#include <cstddef>  // NULL
+		
+	4. RF24.c
+		Sửa:
+		bool RF24_initialize(void)
+		{
+			#if defined(MY_RX_MESSAGE_BUFFER_FEATURE)
+			 //pinMode(MY_RF24_IRQ_PIN, INPUT);
+
+				// assure SPI can be used from interrupt context
+				// Note: ESP8266 & SoftSPI currently do not support interrupt usage for SPI,
+				// therefore it is unsafe to use MY_RF24_IRQ_PIN with ESP8266/SoftSPI!
+			//  _SPI.usingInterrupt(digitalPinToInterrupt(MY_RF24_IRQ_PIN));
+			//  attachInterrupt(digitalPinToInterrupt(MY_RF24_IRQ_PIN), RF24_irqHandler, FALLING);
+
+				F030_GPIO_pinMode_input( RF24_IRQ_PORT, RF24_IRQ_PIN, GPIO_Mode_IN, GPIO_PuPd_UP);
+				F030_EXTI_trigger_select(RF24_IRQ_PORT, RF24_IRQ_PIN, EXTI_Trigger_Falling);
+				NVIC_EnableIRQ(RF24_IRQ);
+			#endif
+		}
+		
+			#if defined(MY_RX_MESSAGE_BUFFER_FEATURE)
+
+			#ifdef STM32F0XX
+				#if   RF24_IRQ_PIN < 2
+					#define RF24_irqHandler    EXTI0_1_IRQHandler
+				#elif RF24_IRQ_PIN < 4
+					#define RF24_irqHandler    EXTI2_3_IRQHandler
+				#else
+					#define RF24_irqHandler    EXTI4_15_IRQHandler
+				#endif
+			#endif
+
+			void RF24_irqHandler(void)
+			{
+				...
+				// phải thêm lệnh xóa cờ ngắt ngoài:
+				EXTI->PR = _BV(RF24_IRQ_PIN);  // clear EXTI flag
+			}
+	
+Mô tả hoạt động: khi nhận đc bản tin RF24 thì sẽ thực hiện hàm ngắt ngoài RF24_irqHandler.
+	- Trong hàm ngắt sẽ gọi hàm RF24_receiveCallback() để đọc bản tin RF24 và Push vào transportRxQueue.
+	
+	- Trong hàm _process() sẽ kiểm tra transportAvailable() bằng cách kiểm tra RxQueue. Không cần dùng SPI kiểm tra cờ RF24 như trước.
+	
+
+//===========================================================================//
+Sử dụng wait_event cho hàm wait:
+
+	Sửa MySensorsCore.h, .cpp:
+
+	1. Sửa hàm wait(): sửa thành wait_process(const uint32_t waitingMS).
+		- Hàm này có nhiệm vụ delay(waitingMS) và trong thời gian delay sẽ gọi hàm _process() để xử lý các bản tin nhận đc.
+			void wait_process(const uint32_t waitingMS)
+			{
+				#define  STEP_CHECK   10
+				uint32_t now_ms = hwMillis();
+
+				for (int i = 0; i < waitingMS; i += STEP_CHECK)
+				{
+					delay_until_ms(now_ms += STEP_CHECK);
+					_process();
+				}
+			}
+
+	2. Thêm hàm wait_process_until:
+		void wait_process_until(const uint32_t targetMS) {
+			int delta = targetMS - hwMillis();
+			if (delta > 0) wait_process(delta);
+		}
+			
+//===========================================================================//
+Thêm tính năng wait_event cho hàm RF24_sendMessage:
+
+	Sửa RF24.c:
+	- Sửa hàm RF24_sendMessage:
+		Các bước truyền bản tin:
+			(1) RF24_stopListening
+			(2) RF24_openWritingPipe
+			(3) RF24_spiWriteMultiByte
+			(4) RF24_ce(HIGH)
+			(5) wait_transmit_complete
+			(6) RF24_ce(LOW)
+      (7) RF24_clearStatus
+			(8) RF24_startListening
+
+		Bước (5): đợi truyền xong bản tin bằng cách dùng SPI kiểm tra 2 cờ RF24_TX_DS và RF24_MAX_RT trong thanh ghi RF24_STATUS.
+		Chúng ta sẽ tối ưu bằng cách đợi event trên RF24_IRQ_PIN: vì 1 trong 2 cờ trên đc bật đều ánh xạ ra RF24_IRQ_PIN.
+		
+		RF24_sendMessage()
+		{
+			...
+			
+			RF24_ce(HIGH);  // go, TX starts after ~10us
+
+		//  uint16_t timeout = 0xFFFF;
+		//  do {RF24_status = RF24_getStatus(); }
+		//  while  (!(RF24_status & ( _BV(RF24_MAX_RT) | _BV(RF24_TX_DS) )) && timeout--);
+
+			RF24_wait_transmit_complete();
+			RF24_status = RF24_getStatus();
+
+			RF24_ce(LOW);
+		}
+			
+	- Hàm RF24_wait_transmit_complete trong RF24_SPI_GPIO.c:
+		Hàm này có nhiệm vụ đợi event của RF24_IRQ_PIN.
+		Ta phải disable RF24_irqHandler để không bị nhảy vào hàm ngắt đọc dữ liệu.
+		Ở trạng thái bình thường, 2 cờ EXTI & NVIC của 
+	
+		void RF24_wait_transmit_complete() {
+			NVIC_DisableIRQ(RF24_IRQ);        /// disable RF24_irqHandler
+
+			do __WFE(); while ((EXTI->PR & _BV(RF24_IRQ_PIN)) == 0);
+			EXTI->PR = _BV(RF24_IRQ_PIN);     /// clear EXTI flag
+			NVIC_ClearPendingIRQ(RF24_IRQ);   /// clear NVIC flag
+
+			NVIC_EnableIRQ(RF24_IRQ);         /// enable RF24_irqHandler
+		}
+			

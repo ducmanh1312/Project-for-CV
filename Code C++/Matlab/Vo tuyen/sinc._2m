@@ -1,0 +1,11 @@
+function[y] = sinc_2(t)
+x = [-pi:4*pi/100:pi]
+f = zeros(1,length(x));
+for i = 1:length(x)
+    if x(i) == 0
+        f(i) = 1;
+    else
+        f(i) = (sin(pi*x(i))/(pi*x(i)))*(sin(pi*x(i))/(pi*x(i)));
+    end
+
+end

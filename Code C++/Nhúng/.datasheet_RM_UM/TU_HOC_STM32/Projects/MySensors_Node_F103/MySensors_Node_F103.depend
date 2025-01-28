@@ -1,0 +1,483 @@
+# depslib dependency file v1.0
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\misc.c
+	"misc.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\misc.h
+	"stm32f10x.h"
+
+1511206858 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\inc\stm32f10x.h
+	"core_cm3.h"
+	"system_stm32f10x.h"
+	<stdint.h>
+	"stm32f10x_conf.h"
+
+1511206858 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\cmsis\core_cm3.h
+	<stdint.h>
+	<core_cmInstr.h>
+	<core_cmFunc.h>
+
+1513827576 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\cmsis\core_cminstr.h
+	<cmsis_iar.h>
+	<cmsis_ccs.h>
+
+1511206858 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\cmsis\core_cmfunc.h
+	<cmsis_iar.h>
+	<cmsis_ccs.h>
+
+1511206858 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\inc\system_stm32f10x.h
+
+1511206858 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\inc\stm32f10x_conf.h
+	"stm32f10x_adc.h"
+	"stm32f10x_bkp.h"
+	"stm32f10x_can.h"
+	"stm32f10x_cec.h"
+	"stm32f10x_crc.h"
+	"stm32f10x_dac.h"
+	"stm32f10x_dbgmcu.h"
+	"stm32f10x_dma.h"
+	"stm32f10x_exti.h"
+	"stm32f10x_flash.h"
+	"stm32f10x_fsmc.h"
+	"stm32f10x_gpio.h"
+	"stm32f10x_i2c.h"
+	"stm32f10x_iwdg.h"
+	"stm32f10x_pwr.h"
+	"stm32f10x_rcc.h"
+	"stm32f10x_rtc.h"
+	"stm32f10x_sdio.h"
+	"stm32f10x_spi.h"
+	"stm32f10x_tim.h"
+	"stm32f10x_usart.h"
+	"stm32f10x_wwdg.h"
+	"misc.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_adc.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_bkp.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_can.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_cec.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_crc.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_dac.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_dbgmcu.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_dma.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_exti.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_flash.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_fsmc.h
+	"stm32f10x.h"
+
+1512978681 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_gpio.h
+	"stm32f10x.h"
+
+1533788831 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_i2c.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_iwdg.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_pwr.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_rcc.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_rtc.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_sdio.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_spi.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_tim.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_usart.h
+	"stm32f10x.h"
+
+1511232059 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\inc\stm32f10x_wwdg.h
+	"stm32f10x.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_adc.c
+	"stm32f10x_adc.h"
+	"stm32f10x_rcc.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_bkp.c
+	"stm32f10x_bkp.h"
+	"stm32f10x_rcc.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_can.c
+	"stm32f10x_can.h"
+	"stm32f10x_rcc.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_cec.c
+	"stm32f10x_cec.h"
+	"stm32f10x_rcc.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_crc.c
+	"stm32f10x_crc.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_dac.c
+	"stm32f10x_dac.h"
+	"stm32f10x_rcc.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_dbgmcu.c
+	"stm32f10x_dbgmcu.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_dma.c
+	"stm32f10x_dma.h"
+	"stm32f10x_rcc.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_exti.c
+	"stm32f10x_exti.h"
+
+1536247874 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_flash.c
+	"stm32f10x_flash.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_fsmc.c
+	"stm32f10x_fsmc.h"
+	"stm32f10x_rcc.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_gpio.c
+	"stm32f10x_gpio.h"
+	"stm32f10x_rcc.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_i2c.c
+	"stm32f10x_i2c.h"
+	"stm32f10x_rcc.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_iwdg.c
+	"stm32f10x_iwdg.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_pwr.c
+	"stm32f10x_pwr.h"
+	"stm32f10x_rcc.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_rcc.c
+	"stm32f10x_rcc.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_rtc.c
+	"stm32f10x_rtc.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_sdio.c
+	"stm32f10x_sdio.h"
+	"stm32f10x_rcc.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_spi.c
+	"stm32f10x_spi.h"
+	"stm32f10x_rcc.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_tim.c
+	"stm32f10x_tim.h"
+	"stm32f10x_rcc.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_usart.c
+	"stm32f10x_usart.h"
+	"stm32f10x_rcc.h"
+
+1511232059 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\spl\src\stm32f10x_wwdg.c
+	"stm32f10x_wwdg.h"
+	"stm32f10x_rcc.h"
+
+1511206858 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\src\startup_stm32f10x_md.s
+
+1511206858 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\common\spl_f103\src\system_stm32f10x.c
+	"stm32f10x.h"
+
+1516260452 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\library\fstore\flash_stm32.c
+	"stm32f10x_conf.h"
+	"stm32f0xx_conf.h"
+	"flash.h"
+
+1513927608 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\library\fstore\flash.h
+	"basic.h"
+	<stdint.h>
+	<stdbool.h>
+
+1536721473 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\library\basic.h
+	"stm32f10x_conf.h"
+	"stm32f0xx_conf.h"
+	<stdbool.h>
+
+1560934660 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\library\fstore\fstore.c
+	"FStore.h"
+	"flash.h"
+	"crc8.h"
+	<stdio.h>
+
+1536221997 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\library\fstore\fstore.h
+	"basic.h"
+
+1513927616 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\library\fstore\crc8.h
+	"basic.h"
+	<stdint.h>
+
+1570411664 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\library\rf24\rf24.cpp
+	<stdio.h>
+	"Core.h"
+	"RF24_SPI_GPIO.h"
+	"RF24.h"
+	"MyHwSTM32.h"
+	"MyCustoms.h"
+
+1552717603 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\library\core\core.h
+	"basic.h"
+
+1542962660 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\library\rf24\rf24_spi_gpio.h
+	"basic.h"
+
+1570612441 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\library\rf24\rf24.h
+	"basic.h"
+	"MyConfig.h"
+
+1597399742 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\myconfig.h
+	"Core.h"
+
+1537871367 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\myhwstm32.h
+	"Core.h"
+	"MyHw.h"
+	<stdio.h>
+
+1537929369 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\myhw.h
+	"MyConfig.h"
+	"MyMessage.h"
+
+1517391926 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mymessage.h
+	<stdint.h>
+
+1543041860 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mycustoms.h
+
+1550545881 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\library\watchdog\watchdog.c
+	"basic.h"
+	"Watchdog.h"
+
+1527476524 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\library\watchdog\watchdog.h
+	"basic.h"
+
+1520500879 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mygatewaytransport.cpp
+	"MyGatewayTransport.h"
+
+1520500807 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mygatewaytransport.h
+	"MyProtocol.h"
+	"MySensorsCore.h"
+
+1484719026 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\myprotocol.h
+	"MySensorsCore.h"
+
+1516682318 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mysensorscore.h
+	"Version.h"
+	"MyConfig.h"
+	"MyEepromAddresses.h"
+	"MyMessage.h"
+	<stddef.h>
+	<stdarg.h>
+
+1492471198 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\version.h
+
+1536220495 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\myeepromaddresses.h
+
+1537933136 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mygatewaytransportserial.cpp
+	"MyConfig.h"
+	"MyProtocol.h"
+	"MyGatewayTransport.h"
+	"MyMessage.h"
+	"MyProtocol.h"
+	"MyIndication.h"
+	"MyHwSTM32.h"
+
+1492471198 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\myindication.h
+
+1537932520 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\myhwstm32.cpp
+	"MySensors.h"
+	"MySensorsCore.h"
+	"MyHwSTM32.h"
+	"MyCustoms.h"
+	<stdarg.h>
+	<stdio.h>
+
+1542964166 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\mysensors.h
+	"core/MySensorsCore.h"
+	"core/MyHwESP8266.cpp"
+	"drivers/AVR/DigitalWriteFast/digitalWriteFast.h"
+	"core/MyHwAVR.h"
+	"core/MyHwSAMD.cpp"
+	"core/MyHwLinuxGeneric.cpp"
+	"MyHwSTM32.h"
+	"MyHwSTM32.h"
+	"core/MyLeds.cpp"
+	"core/MyIndication.h"
+	"core/MyInclusionMode.cpp"
+	"core/MySigning.h"
+	"core/MySigningAtsha204.cpp"
+	"drivers/ATSHA204/ATSHA204.cpp"
+	"core/MySigningAtsha204Soft.cpp"
+	"drivers/SPIFlash/SPIFlash.cpp"
+	"core/MyOTAFirmwareUpdate.cpp"
+	"core/MyGatewayTransport.cpp"
+	"core/MyProtocolMySensors.cpp"
+	"drivers/Linux/EthernetClient.h"
+	"drivers/Linux/EthernetServer.h"
+	"drivers/Linux/IPAddress.h"
+	"drivers/PubSubClient/PubSubClient.cpp"
+	"core/MyGatewayTransportMQTTClient.cpp"
+	"core/MyGatewayTransport.cpp"
+	"core/MyProtocol.h"
+	"core/MyGatewayTransportEthernet.cpp"
+	"drivers/Linux/EthernetClient.h"
+	"drivers/Linux/EthernetServer.h"
+	"drivers/Linux/IPAddress.h"
+	"core/MyGatewayTransportEthernet.cpp"
+	"core/MyGatewayTransportEthernet.cpp"
+	"core/MyGatewayTransportEthernet.cpp"
+	"MyGatewayTransport.h"
+	"drivers/AVR/DigitalIO/DigitalIO.h"
+	"core/MyTransport.h"
+	"drivers/AES/AES.cpp"
+	"RF24.h"
+	"MyTransportNRF24.h"
+	"drivers/AltSoftSerial/AltSoftSerial.cpp"
+	"core/MyTransportRS485.cpp"
+	"drivers/RFM69/RFM69.cpp"
+	"core/MyTransportRFM69.cpp"
+	"drivers/RFM95/RFM95.cpp"
+	"core/MyTransportRFM95.cpp"
+	"core/MyCapabilities.h"
+	"core/MyMessage.h"
+	"core/MySensorsCore.h"
+	"core/MyMainESP8266.cpp"
+	"core/MyMainLinux.cpp"
+	"core/MyMainDefault.h"
+
+1497034416 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mysigning.h
+	"MySensorsCore.h"
+
+1520500879 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mygatewaytransport.cpp
+	"MyGatewayTransport.h"
+
+1520913489 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\myprotocolmysensors.cpp
+	"MyConfig.h"
+	"MyTransport.h"
+	"MyProtocol.h"
+	<string.h>
+	"stdlib_noniso.h"
+
+1516682386 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mytransport.h
+	"MySensorsCore.h"
+	"MySensors.h"
+
+1492471198 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\drivers\linux\stdlib_noniso.h
+
+1515983654 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mytransportnrf24.h
+
+1520482950 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mycapabilities.h
+
+1498184400 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mymaindefault.h
+
+1492471198 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\myindication.cpp
+	"MyIndication.h"
+	"MyLeds.h"
+
+1516680487 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mymaindefault.cpp
+	"MySensorsCore.h"
+	"MyMainDefault.h"
+
+1516683047 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mymessage.cpp
+	"MyMessage.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"noniso.h"
+	"basic.h"
+
+1515974236 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\drivers\linux\noniso.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<stdbool.h>
+	<stdint.h>
+	<math.h>
+	"stdlib_noniso.h"
+
+1520913489 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\myprotocolmysensors.cpp
+	"MyConfig.h"
+	"MyTransport.h"
+	"MyProtocol.h"
+	<string.h>
+	"stdlib_noniso.h"
+
+1536724815 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mysensorscore.cpp
+	"MySensorsCore.h"
+	"MySensors.h"
+	<stdlib.h>
+	<unistd.h>
+
+1520483204 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mysigning.cpp
+	"MySigning.h"
+
+1542348312 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mytransport.cpp
+	"MyTransport.h"
+	"MyCustoms.h"
+
+1542964203 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\core\mytransportnrf24.cpp
+	"MyConfig.h"
+	"MyTransport.h"
+	"RF24.h"
+	"drivers/CircularBuffer/CircularBuffer.h"
+	"MyTransportNRF24.h"
+	<string.h>
+	"drivers/AES/AES.h"
+
+1516582950 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\mysensors\drivers\circularbuffer\circularbuffer.h
+	<cstddef>
+
+1543046147 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\src\librarycfg.c
+	"Core.c.h"
+	"RF24_SPI_GPIO.c.h"
+
+1559967395 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\library\core\core.c.h
+	"Core.h"
+	<stdio.h>
+
+1559966385 c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\library\rf24\rf24_spi_gpio.c.h
+	"Core.h"
+	"RF24_SPI_GPIO.h"
+	"RF24.h"
+
+1563615802 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\src\main.cpp
+	<stdio.h>
+	"Core.h"
+	"Watchdog.h"
+	"MySensors.h"
+	"MyCustoms.h"
+
+1563611954 source:c:\users\hoang\dropbox\ptitopen team folder\tranducnam\stm32v2\projects\mysensors_node_f103\src\mycustoms.cpp
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	"Core.h"
+	"MyCustoms.h"
+	"RF24_SPI_GPIO.h"
+	"MyEepromAddresses.h"
+	"MyTransport.h"
+	"FStore.h"
+	"Watchdog.h"
+

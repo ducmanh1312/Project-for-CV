@@ -1,0 +1,29 @@
+Add thêm thư viện Watchdog vào project
+	Sửa MyHwSTM32.cpp:
+	
+	1. Thêm 2 lệnh 
+		#include "Watchdog.h"
+		#define  MYSENSOR_WATCHDOG_TIMEOUT_MS    1000
+	
+	
+	2. Hàm hwInit(): thêm lệnh Watchdog_begin()
+		void hwInit()
+		{
+			#if defined(MY_GATEWAY_SERIAL)
+				while (!MY_SERIALDEVICE) {}
+			#endif
+
+			FStore_Begin(&mysensor_fstore[0], MYSENSOR_START_ADDR_0, MYSENSOR_FSTORE_NUM_PAGE, MYSENSOR_FSTORE_ID_0);
+			FStore_Begin(&mysensor_fstore[1], MYSENSOR_START_ADDR_1, MYSENSOR_FSTORE_NUM_PAGE, MYSENSOR_FSTORE_ID_1);
+
+			Watchdog_begin(MYSENSOR_WATCHDOG_TIMEOUT_MS);
+		}
+	
+	
+	3. Hàm hwWatchdogReset()
+		void hwWatchdogReset()
+		{
+			Watchdog_reset();
+		}
+	
+	

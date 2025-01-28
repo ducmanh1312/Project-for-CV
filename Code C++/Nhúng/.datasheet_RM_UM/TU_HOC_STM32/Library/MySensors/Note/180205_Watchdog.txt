@@ -1,0 +1,25 @@
+Sửa lại thư viện Watchdog:
+	1. Thêm hàm bool Watchdog_hardware_begin()
+		- Sử dụng tính năng Hardware watchdog (bit WDG_SW trong phần Option byte): Watchdog sẽ tự động được enable mỗi khi power-on.
+		
+	2. Chỉnh sửa vào project MySensor:
+	
+		- File MyHwSTM32.cpp:
+			Bỏ lệnh Watchdog_begin trong hàm void hwInit().
+			
+		- File main.cpp:
+			Cấu hình Watchdog trong hàm main()
+			
+			int main()
+			{
+				Core_begin();
+				USART1_begin_A9A10(1000000);
+				if (Watchdog_hardware_begin() == false)
+				{
+					printf("Watchdog_hardware_begin failed\n");
+					return -1;
+				}
+				Watchdog_setPrescaler(IWDG_Prescaler_16);  // timeout = 1,638.4 (ms)			
+	
+	
+	

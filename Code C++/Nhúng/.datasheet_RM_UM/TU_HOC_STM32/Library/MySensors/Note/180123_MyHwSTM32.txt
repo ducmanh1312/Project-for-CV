@@ -1,0 +1,37 @@
+Gộp 2 thư viện MyHwAVR, MyHwSAMD thành MyHwSTM32.
+
+1. Rename thư viện MyHwSAMD thành MyHwSTM32:
+	- Sửa file MySensorsCore.cpp
+			//#include "MyHwSAMD.h"      // chinh sua
+			#include "MyHwSTM32.h"
+			
+	- Sửa file MyTransport.cpp
+			//#include "MyHwSAMD.h"      // chinh sua
+			#include "MyHwSTM32.h"
+	
+2. Remove và xóa thư viện MyHwAVR.
+	
+	
+3. Sửa file MySensors.h
+		// Thêm đoạn lệnh:
+		#ifdef STM32F0XX
+			#include "MyHwSTM32.h"   // thay thế cho MyHwSAMD
+		#endif
+	
+4. Sửa file MyTransport.h
+	Thêm #include "MySensors.h" 
+
+	Fix bug: dòng khai báo nguyên hàm bị đặt ở ngoài lệnh #endif
+	typedef void(*transportCallback_t)(void);
+	=> Chuyển vào trong #endif
+
+	vào dưới lệnh typedef void(*transportCallback_t)(void);
+	Nếu không sẽ báo lỗi transportCallback_t.
+	
+5. Chỉ có file MyHwSTM32.cpp và MySensors.h mới include file MyHwSTM32.h.
+	Tương tự với những thư viện khác, phải include thông qua MySensors.h
+		
+	
+	
+	
+	

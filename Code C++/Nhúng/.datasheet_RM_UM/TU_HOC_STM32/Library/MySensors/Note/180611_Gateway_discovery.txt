@@ -1,0 +1,37 @@
+/// Hiện tượng: cứ mỗi 20p, Gateway_Arduino sẽ gửi đi bản tin I_DISCOVER_REQUEST tới BROADCAST_ADDRESS
+ - Tất cả các Node sẽ nhận đc và cùng phản hồi lại I_DISCOVER_RESPONSE
+ - Gây ra hiện tượng: Retransmit, Vcc, nhiệt độ, ... thay đổi đột ngột.
+
+=> Tạm thời tắt tính năng này của Gateway_Arduino.
+
+ 
+/// MyConfig.h
+/**
+* @def MY_TRANSPORT_DISCOVERY_INTERVAL_MS
+* @brief This is a gateway-only feature: Interval (in ms) to issue network discovery checks
+*/
+#ifndef MY_TRANSPORT_DISCOVERY_INTERVAL_MS
+	#define MY_TRANSPORT_DISCOVERY_INTERVAL_MS (20*60*1000ul)
+#endif
+
+
+/// MyTransport.cpp: Gateway TX
+#if defined(MY_GATEWAY_FEATURE)
+	if (hwMillis() - _lastNetworkDiscovery > MY_TRANSPORT_DISCOVERY_INTERVAL_MS) {
+		_lastNetworkDiscovery = hwMillis();
+		TRANSPORT_DEBUG(PSTR("TSM:READY:NWD REQ\n"));	// send transport network discovery
+		(void)transportRouteMessage(build(_msgTmp, BROADCAST_ADDRESS, NODE_SENSOR_ID, C_INTERNAL, I_DISCOVER_REQUEST).set(""));
+	}
+#else
+
+
+	
+/// MyTransport.cpp: Node RX
+#if !defined(MY_GATEWAY_FEATURE)
+	if (type == I_DISCOVER_REQUEST) {
+		if (last == _transportConfig.parentNodeId) {
+			delay(hwMillis() & 0x3ff);  // random wait to minimize collisions
+			(void)transportRouteMessage(build(_msgTmp, sender, NODE_SENSOR_ID, C_INTERNAL, I_DISCOVER_RESPONSE).set(_transportConfig.parentNodeId));
+		}
+	}
+#endif
